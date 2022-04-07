@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <link rel="stylesheet" href="To_Do_List.css">
+    
+</head>
+<body>
+    <!--화면 상단 제목-->
+    <div class="Title">To Do List</div>
+
+    <div>
+        
+        <div class="Input_List">
+            <!--Text 입력창 | Enter key 입력 감지 시, add_List 함수 실행-->
+            <!--HTML에는 함수나 조건문을 작성하지 말 것 > 코드가 복잡해지면 찾기 어려움-->
+            <input id="Input_Text" type="text" onkeyup="if(window.event.keyCode==13){add_List()}">
+            <!--추가 버튼-->
+            <button id="Add_Button"> Add </button>
+        </div>
+    </div>
+    
+
+    <div>
+        <ul id="Saved_List">
+            <!--입력되는 Text 만큼 li 생성-->
+        </ul>
+    </div>
+
+
+    <script src="To_Do_List.js"></script>
+</body>
+</html>
+<!--Naming Rule을 지킬 것 : 예) save_list -->
+

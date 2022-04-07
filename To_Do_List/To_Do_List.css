@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+body {
+    font-family: 'Nanum Brush Script', cursive;
+    text-align: center;
+}
+
+.Title {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 100px;
+    color: beige;
+    background: linear-gradient(135deg, #02aab0, #00cdac);
+}
+
+.Input_List {
+    width: 1690px;
+    height: 40px;
+    text-align: center;
+    margin-top: 5px;  
+}
+
+#Input_Text {
+    width: 340px;
+    height: 30px;
+    padding-top: 7px;
+}
+
+#Add_Button {
+    width: 67px;
+    height: 44px;
+    margin-left: 6px;
+    border: 0px;
+    border-radius: 20%;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 25px;
+}
+
+#Saved_List {
+    width: 400px;
+    padding-top: 15px;
+    padding-left: 38.5%;
+    padding-right: 40%;
+    font-family: 'Nanum Brush Script', cursive;
+}
+
+li {
+    font-size: 30px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    list-style-type: circle;
+  }
+
+li div { 
+    float: left;
+    width:335px;
+    margin-left: 5px;
+    font-size: 30px;
+    /* div Text 넘침 방지 (줄바꿈)*/
+    overflow: hidden;
+    word-wrap: break-word;
+    /* 여기까지 div 줄바꿈 */
+}
+
+li button { 
+    width: 30px;
+    height: 25px;
+    margin-left: 20px;
+    margin-top: 6px;
+    position: absolute;
+    font-size: 20px;
+    border: 0px;
+    border-radius: 20%;
+    text-align: center;
+    font-family: 'Nanum Brush Script', cursive;
+  }
+
+  
