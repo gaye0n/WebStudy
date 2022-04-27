@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <!-- value에 변수를 넣고 싶으면 v-bind:를 앞에 작성(생략가능 | :만 작성) 
+            이벤트는 v-on:을 붙여주면 됨(생략가능 | @만 작성 )-->
+        <form v-on:submit.prevent="submit">
+            <!-- <input type="text" :value="text" @keyup="updateText"><br/> -->
+            <!-- 양방향 바인딩 구현 | v-model이 [:value="text" @keyup="updateText"] 문법을 대체 -->
+            <input type="text" v-model="text"><br/>
+            {{ text }} <br/>
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- {{ nextYear('안녕') }}  {{ year }} -->
+        <br/><br/>
+        <!-- <input :type="type" :value="inputData">
+        <br/><br/>
+        <a :href="getKossieCoderLink('KossieCoder')">Vue Study</a>
+
+        <button v-on:click="alert">Click Me</button> 
+
+        <button v-on:click="plus">더하기</button>
+        <button v-on:click="minus">빼기</button>    -->
+
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app', 
+            data: {
+                year: 2022,
+                text: 'text',
+
+                person: {
+                    name: '김가연',
+                    age: 29
+                },
+                inputData: 'Hello',
+                type: 'text',
+                link: 'https://www.youtube.com/'
+            },
+            // methods에는 함수를 넣을 수 있다 | 함수 이름을 쓰지 않아도 줄여서 사용할 수 있다 > function 생략가능
+            methods: {
+                // Input 창에 입력한 Text가 아래쪽에 실시간으로 반영되도록 함
+             /* updateText(event) {
+                    this.text = event.target.value;
+                },*/
+
+                submit() {
+                    alert('submitted');
+                    // console 창에 Hello가 빠르게 나타났다가 사라진다 > v-on:submit.prevent를 추가해주면 사라지지 않음(Vue 공식문서 참고)
+                    console.log('Hello');
+                },
+
+                plus() {
+                    this.year++;
+                }, 
+                minus() {
+                    this.year--; 
+                },
+
+                alert() {
+                    alert('Hello Gayeon! :)');
+                },
+                getKossieCoderLink(channel) {
+                    return this.link + channel;
+                },
+                nextYear(greeting) {
+                    // this.person으로 바로 들어가는 이유는 Vue.js에서 data안에 있는 데이터들을 바로 this에 넣어줌
+                    return greeting + '! ' + this.person.name + '은(는) 내년에 '+ (this.person.age + 1) + '살 입니다.';
+                },
+                // methods도 this.nextYear로 바로 사용할 수 있다.
+                otherMethod: function() {
+                    this.nextYear();
+                }
+            }
+        })
+    </script>
+  </body>
+</html>
